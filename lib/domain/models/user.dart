@@ -46,6 +46,10 @@ class User {
 
     String toRawJson() => json.encode(toJson());
 
+    static List<User> fromJsonList(List<dynamic> jsonList) {
+      return jsonList.map((json) => User.fromJson(json)).toList();
+    }
+
     factory User.fromJson(Map<String, dynamic> json) => User(
         address: Address.fromJson(json["address"]),
         id: json["id"],

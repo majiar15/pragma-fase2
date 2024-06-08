@@ -1,3 +1,5 @@
+import 'package:dartz/dartz.dart';
+
 import '../../models/product.dart';
 import '../../repositories/product_repository.dart';
 
@@ -6,6 +8,6 @@ class GetOneProductUseCase {
 
   GetOneProductUseCase(this.productRepository);
 
-  Future<Product> getAllProducts(int id) => productRepository.getProductById(id);
+  Future<Either<String, Product>> call(int id) => productRepository.getProductById(id);
 
 }

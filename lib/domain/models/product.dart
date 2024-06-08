@@ -52,6 +52,10 @@ class Product {
         rating: Rating.fromJson(json["rating"]),
     );
 
+    static List<Product> fromJsonList(List<dynamic> jsonList) {
+      return jsonList.map((json) => Product.fromJson(json)).toList();
+    }
+
     Map<String, dynamic> toJson() => {
         "id": id,
         "title": title,

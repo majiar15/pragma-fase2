@@ -1,3 +1,5 @@
+import 'package:dartz/dartz.dart';
+
 import '../../models/user.dart';
 import '../../repositories/user_repository.dart';
 
@@ -6,6 +8,6 @@ class GetAllUsersUseCase {
 
   GetAllUsersUseCase(this.userRepository);
 
-  Future<List<User>> getAllUsers() => userRepository.getAllUsers();
+  Future<Either<String, List<User>>> call() => userRepository.getAllUsers();
 
 }

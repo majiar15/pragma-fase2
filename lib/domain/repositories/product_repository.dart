@@ -1,9 +1,11 @@
 
+import 'package:dartz/dartz.dart';
+
 import '../models/product.dart';
 
 abstract class ProductRepository {
 
-  Future<List<Product>> getAllProducts();
-  Future<Product> getProductById(int id);
+  Future<Either<String, List<Product>>> getAllProducts();
+  Future<Either<String, Product>> getProductById(int id);
 
 }
